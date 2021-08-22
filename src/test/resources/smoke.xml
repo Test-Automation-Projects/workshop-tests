@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke">
+    <test name="API Test">
+        <packages>
+            <package name="com.automated.tests.java.api.*"/>
+        </packages>
+    </test>
+    <test name="UI Test">
+        <packages>
+            <package name="com.automated.tests.java.ui.*"/>
+        </packages>
+    </test>
+</suite>

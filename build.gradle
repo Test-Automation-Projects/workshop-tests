@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.8.1"
+}
+
+group 'com.test'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+ext {
+    lombokVersion = "1.18.20"
+    testNgVersion = "6.14.3"
+    selenideVersion = "5.23.0"
+    log4jVersion = "2.12.1"
+    assertJVersion = "3.11.1"
+    allureVersion = "2.13.5"
+    restAssuredVersion = "4.2.0"
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+allure {
+    version = "$allureVersion"
+    autoconfigure = true
+}
+
+test {
+    useTestNG()
+    systemProperty 'allure.results.directory', 'build/allure-results'
+    finalizedBy 'allureReport'
+}
+
+dependencies {
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    testCompileOnly "org.projectlombok:lombok:$lombokVersion"
+    testAnnotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    compile group: 'org.testng', name: 'testng', version: "$testNgVersion"
+
+    implementation "com.codeborne:selenide:$selenideVersion"
+    implementation "org.apache.logging.log4j:log4j-core:$log4jVersion"
+    implementation "io.qameta.allure:allure-testng:$allureVersion"
+    implementation "io.qameta.allure:allure-rest-assured:$allureVersion"
+    implementation "io.rest-assured:rest-assured:$restAssuredVersion"
+
+    testImplementation "org.assertj:assertj-core:$assertJVersion"
+}
