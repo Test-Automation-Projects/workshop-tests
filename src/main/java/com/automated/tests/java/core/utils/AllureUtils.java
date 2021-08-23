@@ -13,8 +13,7 @@ public class AllureUtils {
     public static void generateAllureEnvironment() {
         try {
             Properties properties = new Properties();
-            properties.setProperty("Front url", Config.frontUrl);
-            properties.setProperty("Back url", Config.backUrl);
+            properties.setProperty("Base url", Config.baseUrl);
             properties.setProperty("Browser", Configuration.browser);
             properties.setProperty("Remote", Configuration.remote);
 

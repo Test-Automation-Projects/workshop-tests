@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 @Listeners({BaseUIListener.class})
-public class SmokeTest extends BaseUITest {
+public class SmokeUITest extends BaseUITest {
     @BeforeMethod
     public void beforeTest() {
         authorizeAsUser();

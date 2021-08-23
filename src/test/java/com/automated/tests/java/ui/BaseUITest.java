@@ -7,26 +7,21 @@ import com.automated.tests.java.ui.pages.StepikCatalogPage;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 public class BaseUITest extends BaseTest {
 
-    @BeforeSuite
-    public void setupConfig() {
-        Configuration.baseUrl = Config.frontUrl;
+    @BeforeClass
+    public void setupUISuite() {
+        Configuration.baseUrl = Config.baseUrl;
         SelenideLogger.addListener("Allure", new AllureSelenide());
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();
-    }
-
-    @AfterSuite
-    public void closeDriver() {
         Selenide.closeWebDriver();
     }
 
