@@ -3,12 +3,12 @@
 <suite name="Smoke">
     <test name="API Test">
         <packages>
-            <package name="com.automated.tests.java.api.*"/>
+            <package name="com.automated.tests.java.api.SmokeAPITest"/>
         </packages>
     </test>
     <test name="UI Test">
         <packages>
-            <package name="com.automated.tests.java.ui.*"/>
+            <package name="com.automated.tests.java.ui.SmokeUITest"/>
         </packages>
     </test>
 </suite>

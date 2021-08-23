@@ -1,4 +1,4 @@
-package com.automated.tests.java;
+package com.automated.tests.java.api;
 
 import com.automated.tests.java.core.config.Config;
 import io.restassured.RestAssured;

@@ -71,7 +71,6 @@ public class BaseListener implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        AllureUtils.generateAllureEnvironment();
     }
 
     public void logRequest(ByteArrayOutputStream stream) {

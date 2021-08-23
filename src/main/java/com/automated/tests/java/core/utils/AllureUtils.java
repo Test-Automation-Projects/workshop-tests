@@ -13,9 +13,9 @@ public class AllureUtils {
     public static void generateAllureEnvironment() {
         try {
             Properties properties = new Properties();
-            properties.setProperty("Base url", Config.baseUrl);
-            properties.setProperty("Browser", Configuration.browser);
-            properties.setProperty("Remote", Configuration.remote);
+            if (Config.baseUrl != null) properties.setProperty("Base url", Config.baseUrl);
+            if (Configuration.browser != null) properties.setProperty("Browser", Configuration.browser);
+            if (Configuration.remote != null) properties.setProperty("Remote", Configuration.remote);
 
             File file = new File("./target/allure-results/environment.properties");
             file.getParentFile().mkdirs();

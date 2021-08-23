@@ -1,6 +1,5 @@
 package com.automated.tests.java.api;
 
-import com.automated.tests.java.BaseTest;
 import com.automated.tests.java.api.requests.CheckedRequest;
 import com.automated.tests.java.core.listeners.BaseListener;
 import org.testng.annotations.Listeners;
